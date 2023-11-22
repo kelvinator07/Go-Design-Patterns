@@ -78,3 +78,4 @@ func main() {
 	sq := NewSquare(5)
 	UseIt(sq)
 }
+  
