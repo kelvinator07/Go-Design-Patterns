@@ -84,7 +84,6 @@ func main() {
 
 	// Builder
 	b := NewHtmlBuilder("ul")
-  	b.AddChildFluent("li", "hello").
-    	AddChildFluent("li", "world")
+  	b.AddChildFluent("li", "hello").AddChildFluent("li", "world")
   	fmt.Println(b.String())
 }

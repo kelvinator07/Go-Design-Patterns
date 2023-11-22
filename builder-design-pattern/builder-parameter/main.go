@@ -43,7 +43,7 @@ func (b *EmailBuilder) Body(body string) *EmailBuilder {
 }
 
 func sendMailImpl(email *email) {
-
+	// send email ...
 }
 
 // This forces this user to use the builder

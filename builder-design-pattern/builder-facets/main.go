@@ -16,16 +16,16 @@ func NewPersonBuilder() *PersonBuilder {
   	return &PersonBuilder{&Person{}}
 }
 
-func (it *PersonBuilder) Build() *Person {
-  	return it.person
+func (pb *PersonBuilder) Build() *Person {
+  	return pb.person
 }
 
-func (it *PersonBuilder) Works() *PersonJobBuilder {
-  	return &PersonJobBuilder{*it}
+func (pb *PersonBuilder) Works() *PersonJobBuilder {
+  	return &PersonJobBuilder{*pb}
 }
 
-func (it *PersonBuilder) Lives() *PersonAddressBuilder {
-  	return &PersonAddressBuilder{*it}
+func (pb *PersonBuilder) Lives() *PersonAddressBuilder {
+  	return &PersonAddressBuilder{*pb}
 }
 
 type PersonJobBuilder struct {
@@ -51,19 +51,19 @@ type PersonAddressBuilder struct {
   	PersonBuilder
 }
 
-func (it *PersonAddressBuilder) At(streetAddress string) *PersonAddressBuilder {
-	it.person.StreetAddress = streetAddress
-	return it
+func (pab *PersonAddressBuilder) At(streetAddress string) *PersonAddressBuilder {
+	pab.person.StreetAddress = streetAddress
+	return pab
 }
 
-func (it *PersonAddressBuilder) In(city string) *PersonAddressBuilder {
-	it.person.City = city
-	return it
+func (pab *PersonAddressBuilder) In(city string) *PersonAddressBuilder {
+	pab.person.City = city
+	return pab
 }
 
-func (it *PersonAddressBuilder) WithPostcode(postcode string) *PersonAddressBuilder {
-	it.person.Postcode = postcode
-	return it
+func (pab *PersonAddressBuilder) WithPostcode(postcode string) *PersonAddressBuilder {
+	pab.person.Postcode = postcode
+	return pab
 }
 
 func main() {
