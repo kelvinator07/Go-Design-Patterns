@@ -28,7 +28,7 @@ type Filter struct {
 	//
 }
 
-func(f *Filter) FilterByColor(products []Product, color Color) []*Product {
+func (f *Filter) FilterByColor(products []Product, color Color) []*Product {
 	result := make([]*Product, 0)
 
 	for i, v := range products {
@@ -39,7 +39,7 @@ func(f *Filter) FilterByColor(products []Product, color Color) []*Product {
 	return result
 }
 
-func(f *Filter) FilterBySize(products []Product, size Size) []*Product {
+func (f *Filter) FilterBySize(products []Product, size Size) []*Product {
 	result := make([]*Product, 0)
 
 	for i, v := range products {
@@ -50,7 +50,7 @@ func(f *Filter) FilterBySize(products []Product, size Size) []*Product {
 	return result
 }
 
-func(f *Filter) FilterByColorAndSize(products []Product, size Size, color Color) []*Product {
+func (f *Filter) FilterByColorAndSize(products []Product, size Size, color Color) []*Product {
 	result := make([]*Product, 0)
 
 	for i, v := range products {
@@ -93,7 +93,7 @@ func (a AndSpecification) IsSatisfied(p *Product) bool {
 
 type BetterFilter struct {}
 
-func(f* BetterFilter) Filter(products []Product, spec Specification) []*Product {
+func (f* BetterFilter) Filter(products []Product, spec Specification) []*Product {
 	result := make([]*Product, 0)
 
 	for i, v := range products {
