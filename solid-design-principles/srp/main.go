@@ -27,7 +27,8 @@ func (j *Journal) AddEntry(text string) int {
 }
 
 func (j *Journal) removeEntry(index int) {
-	//...
+	entryCount--
+	j.entries = append(j.entries[:index], j.entries[index+1:]...)
 }
 
 // Separation of concerns
@@ -44,9 +45,33 @@ func (j *Journal) LoadFromWeb(url *url.URL) {
 	//...
 }
 
+var LineSeperator  = "\n"
+func SaveToFile(j *Journal, filename string) {
+	_ = ioutil.WriteFile(filename, []byte(strings.Join(j.entries, LineSeperator)), 0644)
+}
+
+type Persistence struct {
+	lineSeperator string
+}
+
+func (p *Persistence) SaveToFile(j *Journal, filename string) {
+	_ = ioutil.WriteFile(filename, []byte(strings.Join(j.entries, p.lineSeperator)), 0644)
+}
+
 func main() {
 	j := Journal{}
 	j.AddEntry("I solved math today")
 	j.AddEntry("I ran 3km today")
 	fmt.Print(j.toString())
+
+	fmt.Println("\n==")
+
+	j.removeEntry(1)
+	fmt.Print(j.toString())
+
+	SaveToFile(&j, "journal.txt")
+
+	p := Persistence{"\r\n"}
+	p.SaveToFile(&j, "journal.txt")
+
 }
