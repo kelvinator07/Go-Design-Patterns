@@ -62,7 +62,7 @@ type MyPrinter struct {
 }
 
 // Implement interfaces that it only needs
-func(m MyPrinter) Print() {
+func (m MyPrinter) Print() {
 
 }
 
@@ -71,11 +71,11 @@ type Photocopier struct {
 }
 
 // implements both
-func(m Photocopier) Print() {
+func (m Photocopier) Print() {
 
 }
 
-func(m Photocopier) Scan() {
+func (m Photocopier) Scan() {
 
 }
 
