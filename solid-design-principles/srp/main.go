@@ -11,6 +11,7 @@ import (
 )
 
 var entryCount = 0
+
 type Journal struct {
 	entries []string
 }
@@ -34,7 +35,7 @@ func (j *Journal) removeEntry(index int) {
 // Separation of concerns
 
 func (j *Journal) Save(filename string) {
-	_ =ioutil.WriteFile(filename, []byte(j.toString()), 0644)
+	_ = ioutil.WriteFile(filename, []byte(j.toString()), 0644)
 }
 
 func (j *Journal) Load(filename string) {
@@ -45,7 +46,8 @@ func (j *Journal) LoadFromWeb(url *url.URL) {
 	//...
 }
 
-var LineSeperator  = "\n"
+var LineSeperator = "\n"
+
 func SaveToFile(j *Journal, filename string) {
 	_ = ioutil.WriteFile(filename, []byte(strings.Join(j.entries, LineSeperator)), 0644)
 }

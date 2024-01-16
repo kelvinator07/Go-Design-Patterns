@@ -7,10 +7,9 @@ type Address struct {
 }
 
 type Person struct {
-	Name string
+	Name    string
 	Address *Address
 }
-
 
 func main() {
 	john := Person{"Kelvin", &Address{"123 Lekki", "Lagos", "Nigeria"}}
@@ -18,7 +17,7 @@ func main() {
 	// deep copy pointers, slices
 	jane := john
 	jane.Address = &Address{john.Address.StreetAddress, john.Address.City, john.Address.Country}
-	jane.Name = "Jane"  // ok
+	jane.Name = "Jane" // ok
 	jane.Address.StreetAddress = "321 Ikoyi"
 
 	fmt.Println(john, john.Address)

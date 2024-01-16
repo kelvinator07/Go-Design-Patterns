@@ -11,7 +11,7 @@ type Bird struct {
 	age int
 }
 
-func (b *Bird) Age() int { return b.age }
+func (b *Bird) Age() int       { return b.age }
 func (b *Bird) SetAge(age int) { b.age = age }
 
 func (b *Bird) Fly() {
@@ -24,7 +24,7 @@ type Lizard struct {
 	age int
 }
 
-func (l *Lizard) Age() int { return l.age }
+func (l *Lizard) Age() int       { return l.age }
 func (l *Lizard) SetAge(age int) { l.age = age }
 
 func (l *Lizard) Crawl() {
@@ -34,12 +34,12 @@ func (l *Lizard) Crawl() {
 }
 
 type Dragon struct {
-	bird Bird
+	bird   Bird
 	lizard Lizard
 }
 
 func (d *Dragon) Age() int { return d.bird.age }
-func (d *Dragon) SetAge(age int) { 
+func (d *Dragon) SetAge(age int) {
 	d.bird.age = age
 	d.lizard.age = age
 }

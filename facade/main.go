@@ -4,11 +4,11 @@ import "fmt"
 
 type Buffer struct {
 	width, height int
-	buffer []rune
+	buffer        []rune
 }
 
 func NewBuffer(width int, height int) *Buffer {
-	return &Buffer{width, height, make([]rune, width * height)}
+	return &Buffer{width, height, make([]rune, width*height)}
 }
 
 func (b *Buffer) At(index int) rune {
@@ -30,12 +30,12 @@ func (v *ViewPort) GetCharacterAt(index int) rune {
 
 // facade
 type Console struct {
-	buffer []*Buffer
+	buffer    []*Buffer
 	viewPorts []*ViewPort
-	offset int
+	offset    int
 }
 
-func NewConsole() *Console{
+func NewConsole() *Console {
 	b := NewBuffer(200, 150)
 	v := NewViewPort(b)
 	return &Console{[]*Buffer{b}, []*ViewPort{v}, 0}

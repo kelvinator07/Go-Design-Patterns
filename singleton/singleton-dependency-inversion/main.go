@@ -38,7 +38,7 @@ func readData(path string) (map[string]int, error) {
 	scanner.Split(bufio.ScanLines)
 
 	result := map[string]int{}
-	
+
 	for scanner.Scan() {
 		k := scanner.Text()
 		scanner.Scan()
@@ -74,7 +74,6 @@ func GetTotalPopulation(cities []string) int {
 	return result
 }
 
-
 func GetTotalPopulationNew(db Database, cities []string) int {
 	result := 0
 	for _, city := range cities {
@@ -91,7 +90,7 @@ func (d *DummyDatabase) GetPopulation(city string) int {
 	if len(d.dummyData) == 0 {
 		d.dummyData = map[string]int{
 			"alpha": 1,
-			"beta": 2,
+			"beta":  2,
 			"gamma": 3,
 		}
 	}

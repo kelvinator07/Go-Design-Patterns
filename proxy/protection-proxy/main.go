@@ -6,7 +6,7 @@ type Driven interface {
 	Drive()
 }
 
-type Car struct {}
+type Car struct{}
 
 func (c *Car) Drive() {
 	fmt.Println("Car is being Driven")
@@ -17,7 +17,7 @@ type Driver struct {
 }
 
 type CarProxy struct {
-	car Car
+	car    Car
 	driver Driver
 }
 
@@ -37,4 +37,3 @@ func main() {
 	car := NewCarProxy(&Driver{18})
 	car.Drive()
 }
- 

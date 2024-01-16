@@ -34,7 +34,6 @@ func (b *PersonBuilder) WorksAsA(position string) *PersonBuilder {
 	return b
 }
 
-
 func main() {
 	pb := PersonBuilder{}
 	p := pb.Called("Kelvin").WorksAsA("Developer").Build()

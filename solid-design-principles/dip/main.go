@@ -20,9 +20,9 @@ type Person struct {
 }
 
 type Info struct {
-	from *Person
+	from         *Person
 	relationship Relationship
-	to *Person
+	to           *Person
 }
 
 // Low level module - save data

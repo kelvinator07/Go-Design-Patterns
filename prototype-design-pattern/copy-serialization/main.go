@@ -11,7 +11,7 @@ type Address struct {
 }
 
 type Person struct {
-	Name string
+	Name    string
 	Address *Address
 	Friends []string
 }
@@ -35,7 +35,7 @@ func (a *Address) DeepCopy() *Address {
 
 func main() {
 	john := Person{"Kelvin", &Address{"123 Lekki", "Lagos", "Nigeria"}, []string{"Chris", "Matt"}}
-	
+
 	jane := john.DeepCopy()
 	jane.Name = "Jane"
 	jane.Address.StreetAddress = "321 Ikoyi"

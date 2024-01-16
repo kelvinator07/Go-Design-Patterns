@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 type Person struct {
-	Name string
-	Age int
+	Name     string
+	Age      int
 	EyeCount int
 }
 

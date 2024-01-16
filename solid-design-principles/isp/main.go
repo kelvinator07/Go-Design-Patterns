@@ -5,7 +5,6 @@ import "fmt"
 // Interface Segregation Principle
 
 type Document struct {
-	
 }
 
 type Machine interface {
@@ -15,7 +14,6 @@ type Machine interface {
 }
 
 type MultiFunctionPrinter struct {
-
 }
 
 // forced to implement all three functions
@@ -24,15 +22,14 @@ func (m MultiFunctionPrinter) Print(d Document) {
 }
 
 func (m MultiFunctionPrinter) Fax(d Document) {
-	
+
 }
 
 func (m MultiFunctionPrinter) Scan(d Document) {
-	
+
 }
 
 type OldFashionedPrinter struct {
-
 }
 
 func (m OldFashionedPrinter) Print(d Document) {
@@ -58,7 +55,6 @@ type Scanner interface {
 }
 
 type MyPrinter struct {
-
 }
 
 // Implement interfaces that it only needs
@@ -67,7 +63,6 @@ func (m MyPrinter) Print() {
 }
 
 type Photocopier struct {
-
 }
 
 // implements both

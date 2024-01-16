@@ -5,6 +5,7 @@ import "fmt"
 // Open Closed Principle
 // Open for extension, closed for modification
 type Size int
+
 const (
 	small Size = iota
 	medium
@@ -12,6 +13,7 @@ const (
 )
 
 type Color int
+
 const (
 	green Color = iota
 	red
@@ -19,9 +21,9 @@ const (
 )
 
 type Product struct {
-	name string
+	name  string
 	color Color
-	size Size
+	size  Size
 }
 
 type Filter struct {
@@ -91,9 +93,9 @@ func (a AndSpecification) IsSatisfied(p *Product) bool {
 	return a.first.IsSatisfied(p) && a.second.IsSatisfied(p)
 }
 
-type BetterFilter struct {}
+type BetterFilter struct{}
 
-func (f* BetterFilter) Filter(products []Product, spec Specification) []*Product {
+func (f *BetterFilter) Filter(products []Product, spec Specification) []*Product {
 	result := make([]*Product, 0)
 
 	for i, v := range products {

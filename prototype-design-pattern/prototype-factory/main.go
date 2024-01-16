@@ -7,12 +7,12 @@ import (
 )
 
 type Address struct {
-	Suite int
+	Suite               int
 	StreetAddress, City string
 }
 
 type Employee struct {
-	Name string
+	Name   string
 	Office Address
 }
 
@@ -31,8 +31,8 @@ func (em *Employee) DeepCopy() *Employee {
 }
 
 // prototypes
-var mainOffice = Employee {"", Address{0, "123 Lekki", "Lagos"}}
-var auxOffice = Employee {"", Address{0, "66 Ikoyi", "Lagos"}}
+var mainOffice = Employee{"", Address{0, "123 Lekki", "Lagos"}}
+var auxOffice = Employee{"", Address{0, "66 Ikoyi", "Lagos"}}
 
 func NewEmployee(proto *Employee, name string, suite int) *Employee {
 	result := proto.DeepCopy()

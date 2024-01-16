@@ -4,7 +4,7 @@ import "fmt"
 
 type Employee struct {
 	Name, Position string
-	AnnualIncome int
+	AnnualIncome   int
 }
 
 // functional approach
@@ -16,9 +16,9 @@ func NewEmployeeFactory(position string, annualIncome int) func(name string) *Em
 
 // structural approach
 type EmployeeFactory struct {
-	Position string
+	Position     string
 	AnnualIncome int
-} 
+}
 
 func (ef *EmployeeFactory) Create(name string) *Employee {
 	return &Employee{name, ef.Position, ef.AnnualIncome}
@@ -38,7 +38,7 @@ func main() {
 	fmt.Println(developer)
 	fmt.Println(manager)
 
-	// 
+	//
 	bossFactory := NewEmployeeFactory2("CEO", 120000)
 	// can do bossFactory.AnnualIncome = 250000
 	boss := bossFactory.Create("Jojo")

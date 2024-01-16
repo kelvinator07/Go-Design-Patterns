@@ -2,19 +2,18 @@ package main
 
 import "fmt"
 
-
 type Person interface {
 	SayHello()
 }
 
 type person struct {
 	name string
-	age int
+	age  int
 }
 
 type tiredPerson struct {
 	name string
-	age int
+	age  int
 }
 
 func (p *person) SayHello() {

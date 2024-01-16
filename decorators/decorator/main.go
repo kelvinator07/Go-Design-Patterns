@@ -36,12 +36,12 @@ func (c *ColoredShape) Render() string {
 }
 
 type TransparentShape struct {
-	Shape Shape
+	Shape        Shape
 	Transparency float32
 }
 
 func (t *TransparentShape) Render() string {
-	return fmt.Sprintf("%s has %f%% transparency", t.Shape.Render(), t.Transparency * 100.0)
+	return fmt.Sprintf("%s has %f%% transparency", t.Shape.Render(), t.Transparency*100.0)
 }
 
 func main() {

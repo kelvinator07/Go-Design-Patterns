@@ -12,7 +12,7 @@ type Sized interface {
 }
 
 type Rectangle struct {
-	width int
+	width  int
 	height int
 }
 
@@ -60,7 +60,7 @@ type Square2 struct {
 }
 
 func (s *Square2) Rectangle() Rectangle {
-	return Rectangle{s.size , s.size}
+	return Rectangle{s.size, s.size}
 }
 
 func UseIt(sized Sized) {
@@ -78,4 +78,3 @@ func main() {
 	sq := NewSquare(5)
 	UseIt(sq)
 }
-  

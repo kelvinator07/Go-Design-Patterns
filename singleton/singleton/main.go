@@ -34,7 +34,7 @@ func readData(path string) (map[string]int, error) {
 	scanner.Split(bufio.ScanLines)
 
 	result := map[string]int{}
-	
+
 	for scanner.Scan() {
 		k := scanner.Text()
 		scanner.Scan()

@@ -7,7 +7,7 @@ import (
 
 type GraphicObject struct {
 	Name, Color string
-	Children []GraphicObject
+	Children    []GraphicObject
 }
 
 func (g *GraphicObject) String() string {
@@ -26,7 +26,7 @@ func (g *GraphicObject) print(sb *strings.Builder, depth int) {
 	sb.WriteRune('\n')
 
 	for _, child := range g.Children {
-		child.print(sb, depth + 1)
+		child.print(sb, depth+1)
 	}
 }
 
@@ -37,7 +37,6 @@ func NewCircle(color string) *GraphicObject {
 func NewSquare(color string) *GraphicObject {
 	return &GraphicObject{"Square", color, nil}
 }
-
 
 func main() {
 	drawing := GraphicObject{"My Drawing", "", nil}
@@ -52,4 +51,3 @@ func main() {
 
 	fmt.Println(drawing.String())
 }
-
